@@ -5,6 +5,8 @@ ARG S3FS_VERSION=v1.82
 
 ENV MOUNT_POINT=/S3
 
+WORKDIR /tmp/s3fs-fuse
+
 RUN apk add --update --no-cache --virtual .runtime-deps \
         alpine-sdk \
         autoconf \
@@ -17,8 +19,7 @@ RUN apk add --update --no-cache --virtual .runtime-deps \
         git \
         libressl-dev  \
         libxml2-dev  \  
-    && git clone https://github.com/s3fs-fuse/s3fs-fuse.git \
-    && cd s3fs-fuse \
+    && git clone https://github.com/s3fs-fuse/s3fs-fuse.git /tmp/s3fs-fuse \
     && git checkout "tags/${S3FS_VERSION}" \
     && ./autogen.sh \
     && ./configure --prefix=/usr \
