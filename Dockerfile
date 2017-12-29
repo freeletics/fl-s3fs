@@ -27,6 +27,5 @@ RUN apk add --update --no-cache --virtual .runtime-deps \
     && make install 
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
