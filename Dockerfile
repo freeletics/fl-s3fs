@@ -1,5 +1,5 @@
 FROM alpine:3.6
-MAINTAINER Freeletics GmbH <operations@freeletics.com>
+LABEL maintainer="Freeletics GmbH <operations@freeletics.com>"
 
 ARG S3FS_VERSION=v1.82
 
