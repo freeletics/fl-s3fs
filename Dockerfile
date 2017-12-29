@@ -19,7 +19,7 @@ RUN apk add --update --no-cache --virtual .runtime-deps \
         git \
         libressl-dev  \
         libxml2-dev  \  
-    && git clone https://github.com/s3fs-fuse/s3fs-fuse.git /tmp/s3fs-fuse \
+    && git clone https://github.com/s3fs-fuse/s3fs-fuse.git . \
     && git checkout "tags/${S3FS_VERSION}" \
     && ./autogen.sh \
     && ./configure --prefix=/usr \
